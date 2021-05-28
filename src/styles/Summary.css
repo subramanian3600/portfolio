@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
+.Summary_page {
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  padding: 8% 0px;
+}
+.Summary_page_layout {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+.Summary_page_layout_left {
+  border-radius: 8px;
+  background: url('../assets/images/summary.jpg');
+  background-size: cover;
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+.Summary_page_layout_right {
+  width: 60%;
+  height: 100%;
+  float: right;
+}
+.Summary_page_layout_right_top {
+  font-family: 'Pattaya', sans-serif;
+  color: #fafafa;
+  padding-left: 30px;
+  padding-top: 10px;
+  height: 10%;
+  width: 100%;
+  text-align: justify;
+  font-size: 2.6rem;
+}
+.Summary_page_layout_right_bottom {
+  color: #fafafa;
+  font-size: 1.5rem;
+  padding: 50px 30px;
+  width: 100%;
+  height: 90%;
+  text-align: justify;
+}
+.Summary_page_layout_right_bottom button {
+  margin-top: 60px;
+}
+.Summary_page_layout_right_bottom a {
+  color: #fafafa;
+  text-decoration: none;
+}
+.Summary_page_layout_right_bottom a:hover {
+  transition: all linear;
+  text-decoration: none;
+}
+.Summary_page_layout_right_bottom_button button {
+  background-color: #fafafa;
+  color: black;
+  border: 1px solid black;
+  border-radius: 3px;
+  height: 50px;
+}
+.Summary_page_layout_right_bottom_button button:hover {
+  color: #fafafa;
+  background-color: black;
+  border: 1px solid #fafafa;
+}

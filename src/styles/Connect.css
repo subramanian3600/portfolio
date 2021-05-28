@@ -1,0 +1,60 @@
+.Connect_page {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  padding: 8% 0px;
+}
+.Connect_page_layout {
+  border-radius: 15px;
+  width: 80%;
+  height: 90%;
+  margin: 0 auto;
+}
+.Connect_page_layout_top {
+  color: #fafafa;
+  font-size: 2.6rem;
+  text-align: center;
+  height: 20%;
+  width: 100%;
+  float: left;
+}
+.Connect_page_layout_bottom {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  float: left;
+}
+.Connect_profile_box {
+  opacity: 0.7;
+  border-radius: 8px;
+  border: #fafafa 1px solid;
+  margin: 50px 30px 10px 30px;
+  background-color: black;
+  width: 330px;
+  height: 100px;
+}
+.Connect_profile_box:hover {
+  opacity: 1;
+}
+.Connect_profile_title {
+  width: 80%;
+  height: 100%;
+  float: left;
+  color: #fafafa;
+  font-size: 2.3rem;
+  text-align: center;
+  padding: 20px;
+}
+.connect_profile_image {
+  margin: 20px 0px;
+  width: 20%;
+  height: 100%;
+  float: right;
+}
+.connect_profile_image input {
+  width: 50px;
+  height: 50px;
+}

@@ -1,0 +1,57 @@
+.WhatIDo_page {
+  background-color: #000000;
+  width: 100%;
+  height: 100vh;
+  padding: 6% 0px;
+}
+.WhatIDo_page_layout {
+  border-radius: 15px;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+.WhatIDo_page_layout_top {
+  font-family: "Pattaya", sans-serif;
+  font-size: 2.5rem;
+  height: 15%;
+  width: 100%;
+  color: #fafafa;
+  text-align: center;
+}
+.WhatIDo_page_layout_bottom {
+  padding: 50px 0;
+  height: 100%;
+  width: 100%;
+}
+.do_card {
+  border: 1px #fafafa solid;
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 20px 10px 20px;
+  width: 260px;
+  height: 210px;
+  float: left;
+}
+.do_logo {
+  padding: 5px;
+  margin: 10px;
+  width: 60px;
+  height: 60px;
+}
+.do_title {
+  font-size: 1.1rem;
+  color: #fafafa;
+  margin: 5px;
+  width: 80%;
+  height: 30px;
+  float: left;
+}
+.do_content {
+  font-size: 0.8rem;
+  color: #fafafa;
+  margin: 5px;
+  width: 80%;
+  height: 60px;
+  float: left;
+}
