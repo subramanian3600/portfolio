@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUBRAMANIAN S V - Full Stack Developer</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #034C53;
+            /* Updated primary color */
+            --background-color: #f0f8ff;
+            --text-color: #333;
+            --card-background: #fff;
+            --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #00b3b3;
+            --background-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --card-background: #2d2d2d;
+            --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: var(--primary-color);
+            color: #fff;
+            transition: background-color 0.5s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Sidenav with Icons and Tooltips */
+        .sidenav {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background-color: var(--primary-color);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            z-index: 1000;
+            animation: fadeInRight 1s ease;
+        }
+
+        .sidenav a {
+            display: block;
+            color: #fff;
+            margin: 20px 0;
+            font-size: 1.5rem;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .sidenav a:hover {
+            transform: scale(1.1);
+        }
+
+        .sidenav a:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--card-background);
+            color: var(--text-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            animation: fadeInUp 1s ease;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        /* Summary Section */
+        .summary {
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            animation: fadeInUp 1s ease;
+        }
+
+        .summary p {
+            margin-bottom: 20px;
+        }
+
+        .summary ul {
+            margin: 10px 0 0 20px;
+        }
+
+        .summary ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Work Experience */
+        .experience-item {
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .experience-item h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .experience-item p {
+            margin: 5px 0;
+            color: var(--text-color);
+        }
+
+        .experience-item ul {
+            margin: 10px 0 0 20px;
+        }
+
+        .experience-item ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Projects */
+        .project-item {
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .project-item h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .project-item p {
+            margin: 5px 0;
+            color: var(--text-color);
+        }
+
+        .project-item ul {
+            margin: 10px 0 0 20px;
+        }
+
+        .project-item ul li {
+            margin-bottom: 5px;
+        }
+
+        .project-item a {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Skills */
+        .skills-category {
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .skills-category h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list span {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skills-list span:hover {
+            transform: scale(1.1);
+        }
+
+        /* Certifications */
+        .certification-item {
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .certification-item h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .certification-item p {
+            margin: 5px 0;
+            color: var(--text-color);
+        }
+
+        /* Honors & Awards */
+        .awards-list {
+            background-color: var(--card-background);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .awards-list h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .awards-list p {
+            margin: 5px 0;
+            color: var(--text-color);
+        }
+
+        /* Contact Links as Icons */
+        .contact-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .contact-icons a {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: var(--card-shadow);
+            display: none;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-to-top.show {
+            display: block;
+        }
+
+        .scroll-to-top:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <!-- Header -->
+    <header>
+        <h1 style="color: #f4f4f4;">SUBRAMANIAN S V</h1>
+        <p>Full Stack Developer | 3+ Years of Expertise in PEAN Stack</p>
+    </header>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Sidenav with Icons and Tooltips -->
+    <div class="sidenav">
+        <a href="#summary" data-tooltip="Summary"><i class="fas fa-user"></i></a>
+        <a href="#experience" data-tooltip="Experience"><i class="fas fa-briefcase"></i></a>
+        <a href="#projects" data-tooltip="Projects"><i class="fas fa-code"></i></a>
+        <a href="#education" data-tooltip="Education"><i class="fas fa-graduation-cap"></i></a>
+        <a href="#skills" data-tooltip="Skills"><i class="fas fa-tools"></i></a>
+        <a href="#certifications" data-tooltip="Certifications"><i class="fas fa-award"></i></a>
+        <a href="#awards" data-tooltip="Awards"><i class="fas fa-trophy"></i></a>
+        <a href="#contact" data-tooltip="Contact"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Summary -->
+        <section id="summary">
+            <h2>Summary</h2>
+            <div class="summary">
+                <p>
+                    With 3 years of experience as a Full Stack Developer, I bring a robust understanding of front-end and back-end technologies, along with a passion for creating dynamic and responsive web applications. Proficient in Angular, Node.js, PostgreSQL, and Express, I have a proven track record of delivering high-quality software solutions that meet client requirements and industry standards.
+                </p>
+                <p><strong>Key Skills:</strong></p>
+                <ul>
+                    <li><strong>Front-End Development:</strong> Strong proficiency in Angular for building dynamic and interactive user interfaces.</li>
+                    <li><strong>Back-End Development:</strong> Extensive experience with Node.js and Express for developing scalable and efficient server-side applications.</li>
+                    <li><strong>Database Management:</strong> In-depth knowledge of PostgreSQL for designing and managing relational databases.</li>
+                    <li><strong>Full Stack Development:</strong> Ability to seamlessly integrate front-end and back-end technologies to create cohesive and functional web applications.</li>
+                    <li><strong>Version Control:</strong> Experienced in using Git and GitHub for version control and collaborative development.</li>
+                </ul>
+                <p><strong>Professional Experience:</strong></p>
+                <ul>
+                    <li>Developed and maintained web applications using Angular, Node.js, PostgreSQL, and Express.</li>
+                    <li>Collaborated with cross-functional teams to design, implement, and test new features and functionalities.</li>
+                    <li>Optimized application performance and user experience by implementing best practices and modern web development techniques.</li>
+                    <li>Provided technical support and troubleshooting for front-end and back-end issues.</li>
+                    <li>Actively participated in code reviews and contributed to improving the overall code quality and development process.</li>
+                </ul>
+                <p><strong>Career Objective:</strong></p>
+                <p>
+                    To leverage my skills and experience as a Full Stack Developer to contribute to innovative and impactful projects, while continuously growing and advancing my career in a dynamic and collaborative environment.
+                </p>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <div class="experience-item">
+                <h3>Software Engineer - Resileo Labs LLP</h3>
+                <p><em>Chennai, India | Sept 2021 – Present</em></p>
+                <ul>
+                    <li>Implemented user interfaces using HTML, CSS, and TypeScript frameworks like Angular to create responsive and user-friendly web applications.</li>
+                    <li>Led a team of two junior developers, fostering a collaborative environment and ensuring timely project delivery.</li>
+                    <li>Used version control systems like Git to manage codebase changes and ensure project integrity.</li>
+                    <li>Enhanced and maintained existing applications, ensuring high performance and reliability.</li>
+                    <li>Optimized application performance, resulting in a 90% improvement in load times and user experience.</li>
+                    <li>Designed and managed job scheduling systems using Node Cron and created interactive chart visualizations with D3.js.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <h3>WakaTech - Integrated Purchase Order and Shipment Management System</h3>
+                <p><em>Technologies: Angular, Node.js, Express, PostgreSQL, Node Cron</em></p>
+                <ul>
+                    <li>Developed a web-based platform to streamline the management of purchase orders, shipment bookings, and carrier services.</li>
+                    <li>Implemented automated order injection, reducing manual processes by 80%.</li>
+                    <li>Optimized database queries, reducing response time by 40%.</li>
+                    <li>Integrated with multiple carrier services (e.g., FedEx, UPS, DHL) for comprehensive shipping options.</li>
+                </ul>
+                <a href="https://wakatech.com" target="_blank">Visit WakaTech</a>
+            </div>
+            <div class="project-item">
+                <h3>Thurro - An Insight Revolution</h3>
+                <p><em>Technologies: Angular, Node.js, Express, PostgreSQL, D3.js</em></p>
+                <ul>
+                    <li>Built a market intelligence platform to aggregate unstructured data and present it in a visual format.</li>
+                    <li>Created interactive data visualizations using D3.js, reducing data analysis time by 90%.</li>
+                    <li>Implemented user roles and permissions for secure access to platform features.</li>
+                    <li>Provided detailed reporting and analytics for tracked sectors and companies.</li>
+                </ul>
+                <a href="https://thurro.com" target="_blank">Visit Thurro</a>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <p><strong>Bachelor of Engineering (Electronics & Comm.)</strong></p>
+            <p><em>Rajalakshmi Institute of Technology, Chennai | Jul 2017 – Aug 2021</em></p>
+            <p><strong>HSC</strong></p>
+            <p><em>Balakrishna Matric Hr. Sec. School, Tirunelveli | Jun 2015 – Mar 2017</em></p>
+            <p><strong>SSLC</strong></p>
+            <p><em>Raja’s Matric Hr. Sec. School, Kanyakumari | Jun 2014 – Mar 2015</em></p>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-category">
+                <h3>Programming Languages</h3>
+                <div class="skills-list">
+                    <span>JavaScript</span>
+                    <span>TypeScript</span>
+                    <span>Python</span>
+                    <span>SQL</span>
+                </div>
+            </div>
+            <div class="skills-category">
+                <h3>Technologies</h3>
+                <div class="skills-list">
+                    <span>PostgreSQL</span>
+                    <span>Express.js</span>
+                    <span>Angular</span>
+                    <span>Node.js</span>
+                    <span>React.js</span>
+                </div>
+            </div>
+            <div class="skills-category">
+                <h3>Tools</h3>
+                <div class="skills-list">
+                    <span>Git</span>
+                    <span>Visual Studio Code</span>
+                    <span>Webpack</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="certification-item">
+                <h3>Python for Data Science (Silver Elite)</h3>
+                <p><em>NPTEL | Jan 2021</em></p>
+            </div>
+        </section>
+
+        <!-- Honors & Awards -->
+        <section id="awards">
+            <h2>Honors & Awards</h2>
+            <div class="awards-list">
+                <h3>Young Turk</h3>
+                <p><em>Resileo Labs LLP | Oct 2022</em></p>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-icons">
+                <a href="https://linkedin.com/in/sysubramanian" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/subramanian3600" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:sysubramanian3600@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer style="text-align: center;">
+        <p>&copy; 2025 SUBRAMANIAN S V. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            themeToggle.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', savedTheme);
+        themeToggle.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>
