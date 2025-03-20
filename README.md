@@ -3,7 +3,7 @@
 Welcome to my personal portfolio! This project showcases my skills, experience, and projects as a Full Stack Engineer.
 
 ## 🌐 Live Demo
-[Check out my portfolio here](#) (Add your website link here)
+[Check out my portfolio here](https://subramanian3600.github.io/portfolio)
 
 ## 🚀 Features
 - **Modern Dark Mode UI** with a royal purple theme
@@ -24,8 +24,8 @@ Welcome to my personal portfolio! This project showcases my skills, experience, 
 ## 📬 Contact
 Feel free to reach out:
 - Email: [svsubramanian3600@gmail.com](mailto:svsubramanian3600@gmail.com)
-- LinkedIn: [https://www.linkedin.com/in/svsubramanian](#)
-- GitHub: [https://github.com/subramanian3600](#)
+- LinkedIn: [https://www.linkedin.com/in/svsubramanian](https://www.linkedin.com/in/svsubramanian)
+- GitHub: [https://github.com/subramanian3600](https://github.com/subramanian3600)
 
 ---
 ⭐ Don't forget to star this repository if you like it!
