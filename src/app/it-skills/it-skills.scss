@@ -1,9 +1,9 @@
 .skills-section {
-  width: 100%;
+  width: calc(100% - 2rem);
   padding: 3rem 0;
   overflow: hidden;
   background: #ffffff;
-  margin: 2rem 0;
+  margin: 2rem auto;
 }
 
 .skills-title {
