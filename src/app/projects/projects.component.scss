@@ -117,6 +117,38 @@
         }
       }
 
+      .type-badge {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 0.75rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        z-index: 2;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+        .material-icons-round {
+          font-size: 16px;
+        }
+
+        &.personal {
+          background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+        }
+
+        &.client {
+          background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+        }
+
+        &.corporate {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+      }
+
       .project-image {
         position: relative;
         width: 100%;

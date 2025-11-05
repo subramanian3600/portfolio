@@ -8,7 +8,8 @@
     "githubUrl": "https://github.com/username/project",
     "category": "Web Application",
     "featured": true,
-    "visible": false
+    "visible": true,
+    "type": "corporate"
   },
   {
     "title": "Task Management App",
@@ -19,7 +20,8 @@
     "githubUrl": "https://github.com/username/project",
     "category": "Web Application",
     "featured": false,
-    "visible": false
+    "visible": true,
+    "type": "client"
   },
   {
     "title": "Mobile Fitness Tracker",
@@ -29,7 +31,8 @@
     "liveUrl": "https://example.com",
     "category": "Mobile App",
     "featured": true,
-    "visible": false
+    "visible": true,
+    "type": "personal"
   },
   {
     "title": "Analytics Dashboard",
@@ -40,7 +43,8 @@
     "githubUrl": "https://github.com/username/project",
     "category": "Dashboard",
     "featured": false,
-    "visible": false
+    "visible": true,
+    "type": "corporate"
   },
   {
     "title": "AI Chatbot Platform",
@@ -50,7 +54,8 @@
     "githubUrl": "https://github.com/username/project",
     "category": "AI/ML",
     "featured": false,
-    "visible": false
+    "visible": true,
+    "type": "personal"
   },
   {
     "title": "Social Media Scheduler",
@@ -60,7 +65,8 @@
     "liveUrl": "https://example.com",
     "category": "Web Application",
     "featured": false,
-    "visible": false
+    "visible": true,
+    "type": "client"
   },
   {
     "title": "Basic Calculator App",
@@ -70,6 +76,7 @@
     "liveUrl": "https://calculate-math.vercel.app",
     "category": "Web Application",
     "featured": false,
-    "visible": true
+    "visible": true,
+    "type": "personal"
   }
 ]

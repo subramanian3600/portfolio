@@ -31,6 +31,21 @@
           </div>
         }
 
+        @if (project.type) {
+          <div class="type-badge" [class.personal]="project.type === 'personal'" [class.client]="project.type === 'client'" [class.corporate]="project.type === 'corporate'">
+            @if (project.type === 'personal') {
+              <span class="material-icons-round">person</span>
+              Personal
+            } @else if (project.type === 'client') {
+              <span class="material-icons-round">business_center</span>
+              Client
+            } @else if (project.type === 'corporate') {
+              <span class="material-icons-round">corporate_fare</span>
+              Corporate
+            }
+          </div>
+        }
+
         @if (project.image) {
           <div class="project-image">
             <img [src]="project.image" [alt]="project.title" />

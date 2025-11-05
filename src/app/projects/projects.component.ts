@@ -12,6 +12,7 @@ interface Project {
   category: string;
   featured?: boolean;
   visible?: boolean;
+  type?: 'personal' | 'client' | 'corporate';
 }
 
 @Component({
