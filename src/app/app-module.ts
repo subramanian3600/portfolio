@@ -3,6 +3,7 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { WhatPeopleSayComponent } from './what-people-say/what-people-say.component';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { App } from './app';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    WhatPeopleSayComponent
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

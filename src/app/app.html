@@ -7,21 +7,30 @@
       <p class="professional-info">Based in Chennai, India</p>
       <p class="tagline">Transforming Ideas into Digital Reality</p>
     </div>
-    
     <div class="stats-container">
       @for (stat of statistics; track stat.label) {
-        <div class="stat-item">
-          <span class="material-icons-round stat-icon">{{stat.icon}}</span>
-          <div class="stat-content">
-            <div class="stat-number">{{stat.number}}</div>
-            <div class="stat-label">{{stat.label}}</div>
-          </div>
+      <div class="stat-item">
+        <span class="material-icons-round stat-icon">{{stat.icon}}</span>
+        <div class="stat-content">
+          <div class="stat-number">{{stat.number}}</div>
+          <div class="stat-label">{{stat.label}}</div>
         </div>
+      </div>
       }
     </div>
 
-    
+    <div class="cv-download-container">
+      <div class="cv-section">
+        <p class="cv-tagline">Ready to see what I can do? Let's build something amazing together!</p>
+        <a href="/assets/cv.pdf" download class="cv-button">
+          <span class="material-icons-round">download</span>
+          Download CV
+        </a>
+      </div>
+    </div>
   </div>
 </div>
+
+<what-people-say></what-people-say>
 
 <router-outlet></router-outlet>

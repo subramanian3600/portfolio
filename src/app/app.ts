@@ -23,9 +23,9 @@ export class App implements OnInit {
   protected githubBio = signal<string>('Full Stack Web Developer');
 
   protected statistics: Statistic[] = [
-    { icon: 'timer', number: '4+', label: 'Years of Experience' },
-    { icon: 'code', number: '15+', label: 'Projects Worked' },
-    { icon: 'people', number: '500+', label: 'LinkedIn Connections' }
+    { icon: 'timer', number: environment.years_of_experience?.toString() + "+", label: 'Years of Experience' },
+    { icon: 'code', number: environment.projects_worked?.toString() + "+", label: 'Projects Worked' },
+    { icon: 'people', number: environment.linkedin_connections?.toString() + "+", label: 'LinkedIn Connections' }
   ];
 
   ngOnInit() {

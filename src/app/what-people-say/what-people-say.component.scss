@@ -1,0 +1,349 @@
+.testimonials-section {
+  width: 100%;
+  max-width: 1400px;
+  margin: 3rem auto;
+  padding: 0 1rem 2rem 1rem;
+  background: #f7f7f5;
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(107, 76, 230, 0.08);
+}
+
+.testimonials-header {
+  padding-top: 1.5rem;
+  padding-bottom: 0.75rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #232946;
+  margin-bottom: 0.3rem;
+  letter-spacing: -1px;
+}
+
+.section-desc {
+  font-size: 0.95rem;
+  color: #6b4ce6;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.testimonials-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  min-height: 350px;
+  position: relative;
+}
+
+.testimonials-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  max-width: 650px;
+  height: 300px;
+  background: linear-gradient(135deg, rgba(107, 76, 230, 0.1) 0%, rgba(157, 139, 230, 0.08) 100%);
+  border-radius: 1.5rem;
+  filter: blur(20px);
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cards-stack {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  z-index: 1;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(107, 76, 230, 0.07);
+  padding: 2.5rem 2rem 1.5rem 2rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  padding-top: 2.5rem;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: center;
+}
+
+.testimonial-card.visible {
+  pointer-events: auto;
+}
+
+.testimonial-card.active {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotateX(0deg) rotateZ(0deg);
+  z-index: 3;
+  animation: slideIn 0.5s ease-out;
+}
+
+.testimonial-card[style*="--card-index: 1"] {
+  opacity: 0.8;
+  transform: translateY(12px) scale(0.98) rotateX(2deg) rotateZ(2deg);
+  z-index: 2;
+}
+
+.testimonial-card[style*="--card-index: 1"] .testimonial-content {
+  filter: blur(2px);
+}
+
+.testimonial-card[style*="--card-index: -1"] {
+  opacity: 0.8;
+  transform: translateY(12px) scale(0.98) rotateX(2deg) rotateZ(-2deg);
+  z-index: 2;
+}
+
+.testimonial-card[style*="--card-index: -1"] .testimonial-content {
+  filter: blur(2px);
+}
+
+.testimonial-card[style*="--card-index: 2"] {
+  opacity: 0.6;
+  transform: translateY(24px) scale(0.96) rotateX(4deg) rotateZ(4deg);
+  z-index: 1;
+}
+
+.testimonial-card[style*="--card-index: 2"] .testimonial-content {
+  filter: blur(4px);
+}
+
+.testimonial-card[style*="--card-index: -2"] {
+  opacity: 0.6;
+  transform: translateY(24px) scale(0.96) rotateX(4deg) rotateZ(-4deg);
+  z-index: 1;
+}
+
+.testimonial-card[style*="--card-index: -2"] .testimonial-content {
+  filter: blur(4px);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.testimonial-content {
+  text-align: center;
+}
+
+.feedback {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #232946;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.person-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  font-size: 1.15rem;
+  color: #232946;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: #6b4ce6;
+  font-weight: 500;
+}
+
+.linkedin-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  width: 40px;
+  height: 40px;
+  background: #0A66C2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(10, 102, 194, 0.3);
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.linkedin-badge:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(10, 102, 194, 0.4);
+}
+
+.linkedin-badge:active {
+  transform: scale(0.95);
+}
+
+.linkedin-badge-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.linkedin-badge i {
+  font-size: 18px;
+  color: #fff;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.card-counter {
+  font-size: 0.9rem;
+  color: #6b4ce6;
+  font-weight: 600;
+  min-width: 50px;
+  text-align: center;
+}
+
+.arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6b4ce6 0%, #9d8be6 100%);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(107, 76, 230, 0.2);
+}
+
+.arrow-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(107, 76, 230, 0.3);
+}
+
+.arrow-btn:active {
+  transform: scale(0.95);
+}
+
+.arrow-btn .material-icons-round {
+  font-size: 24px;
+  color: #fff;
+}
+
+.linkedin-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.linkedin-text {
+  font-size: 0.95rem;
+  color: #6b4ce6;
+  font-weight: 500;
+  margin: 0;
+}
+
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #6b4ce6 0%, #9d8be6 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(107, 76, 230, 0.2);
+}
+
+.linkedin-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(107, 76, 230, 0.3);
+}
+
+.linkedin-link:active {
+  transform: translateY(0);
+}
+
+.linkedin-link .material-icons-round {
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .testimonials-container {
+    min-height: 350px;
+  }
+
+  .testimonial-card {
+    padding: 2rem 1rem 1.5rem 1rem;
+    max-width: 95vw;
+  }
+
+  .carousel-controls {
+    gap: 1rem;
+  }
+  
+  .arrow-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .arrow-btn .material-icons-round {
+    font-size: 20px;
+  }
+
+  .card-counter {
+    font-size: 0.8rem;
+  }
+
+  .linkedin-link-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .linkedin-text {
+    font-size: 0.85rem;
+  }
+
+  .linkedin-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

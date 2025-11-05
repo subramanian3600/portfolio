@@ -22,15 +22,15 @@
   align-items: center;
   min-height: 100vh;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .background-bar {
-  position: fixed;
+  position: absolute;
   right: calc(100% - 85%);
   top: 0;
   width: 16%;
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   z-index: 0;
   opacity: 0.8;
@@ -91,10 +91,12 @@
   font-size: 1.25rem;
   font-weight: 500;
   color: var(--primary-color);
-  animation: slideUp 1.2s ease-out;
   position: relative;
   padding-left: 1.5rem;
   display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriterHighlight 3.5s steps(35, end) 0.5s forwards;
 
   &::before {
     content: "";
@@ -104,7 +106,7 @@
     width: 3px;
     height: 100%;
     background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
-    animation: expandHeight 1.5s ease-out;
+    animation: expandHeight 0.5s ease-out;
     border-radius: 2px;
   }
 }
@@ -169,6 +171,65 @@
   color: var(--text-color);
   opacity: 0.8;
   white-space: nowrap;
+}
+
+.cv-download-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 3rem;
+  width: 100%;
+  animation: slideUp 1s ease-out;
+}
+
+.cv-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.cv-tagline {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: left;
+  margin: 0;
+  max-width: 400px;
+  line-height: 1.5;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.8rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(107, 76, 230, 0.2);
+}
+
+.cv-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(107, 76, 230, 0.3);
+}
+
+.cv-button:active {
+  transform: translateY(-2px);
+}
+
+.cv-button .material-icons-round {
+  font-size: 22px;
 }
 
 @keyframes fadeIn {
@@ -244,6 +305,41 @@
   }
 }
 
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 32.5ch;
+  }
+}
+
+@keyframes typewriterHighlight {
+  from {
+    width: 0;
+    opacity: 0.4;
+  }
+  to {
+    width: 32.5ch;
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    border-right-color: var(--primary-color);
+  }
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+@media (max-width: 1024px) {
+  .background-bar {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .name {
     font-size: 3rem;
@@ -279,10 +375,24 @@
     font-size: 0.9rem;
   }
 
-  .background-bar {
-    width: 15%;
-    right: calc(100% - 80%);
-    opacity: 0.5;
+  .cv-tagline {
+    font-size: 1.1rem;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .cv-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .cv-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .cv-button .material-icons-round {
+    font-size: 20px;
   }
 
   .social-container {
@@ -300,4 +410,9 @@
       font-size: 2rem;
     }
   }
+}
+
+.testimonials-spacer {
+  height: 2rem;
+  width: 100%;
 }

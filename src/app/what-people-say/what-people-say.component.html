@@ -1,0 +1,36 @@
+<section class="testimonials-section">
+  <div class="testimonials-header">
+    <h2 class="section-title">People Talk About Me</h2>
+    <p class="section-desc">I always wanted my work to be part of a bigger self to make people's daily lives and complex app simple to use.</p>
+  </div>
+  <div class="testimonials-container">
+    <div class="cards-stack">
+      <div class="testimonial-card" *ngFor="let t of testimonials; let i = index" 
+           [class.active]="activeIndex === i"
+           [style.--card-index]="i - activeIndex"
+           [ngClass]="{'visible': Math.abs(i - activeIndex) <= 2}">
+        <div class="testimonial-content">
+          <p class="feedback">{{t.feedback}}</p>
+          <div class="person-info">
+            <span class="name">{{t.name}}</span>
+            <span class="role">{{t.role}}</span>
+          </div>
+        </div>
+        <div class="linkedin-badge">
+          <a [href]="'https://www.linkedin.com/in/' + t.linkedinUsername" target="_blank" rel="noopener noreferrer" class="linkedin-badge-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-controls">
+    <button class="arrow-btn left-arrow" (click)="scrollLeft()">
+      <span class="material-icons-round">chevron_left</span>
+    </button>
+    <span class="card-counter">{{activeIndex + 1}} / {{testimonials.length}}</span>
+    <button class="arrow-btn right-arrow" (click)="scrollRight()">
+      <span class="material-icons-round">chevron_right</span>
+    </button>
+  </div>
+</section>
