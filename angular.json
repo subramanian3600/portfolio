@@ -40,7 +40,8 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "baseHref": "/portfolio/"
           },
           "configurations": {
             "production": {
@@ -57,6 +58,23 @@
                 }
               ],
               "outputHashing": "all"
+            },
+            "github-pages": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "20kB",
+                  "maximumError": "30kB"
+                }
+              ],
+              "outputHashing": "all",
+              "outputMode": "static",
+              "prerender": true
             },
             "development": {
               "optimization": false,
