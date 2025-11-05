@@ -6,6 +6,7 @@
   background: #f7f7f5;
   border-radius: 2rem;
   box-shadow: 0 4px 24px rgba(107, 76, 230, 0.08);
+  overflow: hidden;
 
   .section-header {
     text-align: center;
@@ -78,9 +79,10 @@
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+    width: 100%;
 
     .project-card {
       background: white;

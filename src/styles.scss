@@ -8,6 +8,21 @@
 	--background-color: #f8f8f8;
 }
 
+/* Prevent horizontal scroll */
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	overflow-x: hidden;
+	max-width: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
 /* Custom Scrollbar Styles */
 ::-webkit-scrollbar {
 	width: 3px;
