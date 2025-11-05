@@ -21,10 +21,27 @@
   display: flex;
   align-items: center;
   min-height: 100vh;
+  position: relative;
+  overflow: visible;
+}
+
+.background-bar {
+  position: fixed;
+  right: calc(100% - 85%);
+  top: 0;
+  width: 16%;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  z-index: 0;
+  opacity: 0.8;
+  animation: slideDownBar 2s ease-out forwards;
+  pointer-events: none;
 }
 
 .content-wrapper {
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .header {
@@ -174,6 +191,26 @@
   }
 }
 
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px) translateY(-50%);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateX(0) translateY(-50%);
+  }
+}
+
+@keyframes slideDownBar {
+  from {
+    clip-path: polygon(0 0%, 100% 0%, 100% 0%, 0 0%);
+  }
+  to {
+    clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+  }
+}
+
 @keyframes expandHeight {
   from {
     height: 0;
@@ -240,5 +277,27 @@
 
   .stat-label {
     font-size: 0.9rem;
+  }
+
+  .background-bar {
+    width: 15%;
+    right: calc(100% - 80%);
+    opacity: 0.5;
+  }
+
+  .social-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    max-width: 300px;
+  }
+
+  .social-link {
+    width: 80px;
+    height: 80px;
+
+    .material-icons-round {
+      font-size: 2rem;
+    }
   }
 }
