@@ -1,0 +1,24 @@
+[
+  {
+    "institution": "Rajalakshmi Institute of Technology",
+    "logo_url": "https://media.licdn.com/dms/image/v2/C560BAQEWV6MflrNIog/company-logo_200_200/company-logo_200_200/0/1630627882159?e=2147483647&v=beta&t=5_AR-n7u1LHmrLzfDHlAfJvIc9lIhfpaBNfMn3fDhLo",
+    "degree": "Bachelor of Engineering",
+    "field": "Electronics and Communication Engineering",
+    "duration": "2017 - 2021",
+    "location": "Chennai, India",
+    "grade": "8.5 CGPA",
+    "achievements": [
+      "Dean's List for Academic Excellence",
+      "Winner of Inter-College Coding Competition",
+      "Published Research Paper on Machine Learning",
+      "Led Technical Symposium Organization"
+    ],
+    "activities": [
+      "Computer Science Club - President",
+      "Hackathon Participant",
+      "Technical Workshop Organizer",
+      "College Fest Coordinator"
+    ],
+    "color": "#4ECDC4"
+  }
+]

@@ -1,0 +1,19 @@
+<section class="skills-section">
+  <h2 class="skills-title">Tech Stack</h2>
+  <div class="skills-container">
+    <div class="skills-scroll">
+      <div class="skills-track">
+        <div class="skill-logo" *ngFor="let skill of allSkills">
+          <i [class]="skill.icon"></i>
+          <span>{{skill.name}}</span>
+        </div>
+      </div>
+      <div class="skills-track" aria-hidden="true">
+        <div class="skill-logo" *ngFor="let skill of allSkills">
+          <i [class]="skill.icon"></i>
+          <span>{{skill.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

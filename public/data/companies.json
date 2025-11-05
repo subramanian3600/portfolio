@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Comcast (Sky)",
+        "role": "Development Engineer 2",
+        "duration": "May 2025 - Present",
+        "location": "Chennai, India",
+        "description": "",
+        "technologies": [
+            "Angular",
+            "Node.js",
+            "TypeScript",
+            "PostgreSQL",
+            "Redis",
+            "MariaDB",
+            "Docker"
+        ],
+        "website": "https://corporate.comcast.com"
+    },
+    {
+        "name": "Resileo Labs LLP",
+        "role": "Full Stack Developer",
+        "duration": "Sept 2021 - May 2025",
+        "location": "Chennai, India",
+        "description": "",
+        "technologies": [
+            "Angular",
+            "Node.js",
+            "TypeScript",
+            "AWS"
+        ],
+        "website": "https://resileo-labs.com"
+    }
+]

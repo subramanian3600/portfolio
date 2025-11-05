@@ -1,0 +1,93 @@
+<section class="projects-section">
+  <div class="section-header">
+    <span class="icon-badge">
+      <span class="material-icons-round">code</span>
+    </span>
+    <h2 class="section-title">Project Showcase</h2>
+    <p class="section-subtitle">Things I've built with passion and dedication</p>
+  </div>
+
+  <!-- Category Filter -->
+  <div class="filter-container">
+    @for (category of categories; track category) {
+      <button 
+        class="filter-btn"
+        [class.active]="selectedCategory === category"
+        (click)="filterProjects(category)"
+      >
+        {{ category }}
+      </button>
+    }
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="projects-grid">
+    @for (project of filteredProjects; track project.title) {
+      <div class="project-card" [class.featured]="project.featured">
+        @if (project.featured) {
+          <div class="featured-badge">
+            <span class="material-icons-round">star</span>
+            Featured
+          </div>
+        }
+
+        @if (project.image) {
+          <div class="project-image">
+            <img [src]="project.image" [alt]="project.title" />
+            <div class="image-overlay">
+              <div class="overlay-buttons">
+                @if (project.liveUrl) {
+                  <button class="overlay-btn" (click)="openLink(project.liveUrl); $event.stopPropagation()">
+                    <span class="material-icons-round">launch</span>
+                  </button>
+                }
+                @if (project.githubUrl) {
+                  <button class="overlay-btn" (click)="openLink(project.githubUrl); $event.stopPropagation()">
+                    <span class="material-icons-round">code</span>
+                  </button>
+                }
+              </div>
+            </div>
+          </div>
+        }
+
+        <div class="project-content">
+          <div class="project-header">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <span class="project-category">{{ project.category }}</span>
+          </div>
+
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="tech-stack">
+            @for (tech of project.technologies; track tech) {
+              <span class="tech-badge">{{ tech }}</span>
+            }
+          </div>
+
+          <div class="project-actions">
+            @if (project.liveUrl) {
+              <button class="action-btn primary" (click)="openLink(project.liveUrl)">
+                <span class="material-icons-round">launch</span>
+                Live Demo
+              </button>
+            }
+            @if (project.githubUrl) {
+              <button class="action-btn secondary" (click)="openLink(project.githubUrl)">
+                <span class="material-icons-round">code</span>
+                Source Code
+              </button>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  @if (filteredProjects.length === 0) {
+    <div class="no-projects">
+      <span class="material-icons-round">search_off</span>
+      <p>No projects found in this category</p>
+    </div>
+  }
+</section>

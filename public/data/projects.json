@@ -1,0 +1,75 @@
+[
+  {
+    "title": "E-Commerce Platform",
+    "description": "A full-stack e-commerce solution with payment integration, inventory management, and real-time order tracking. Built with modern technologies for optimal performance.",
+    "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80",
+    "technologies": ["Angular", "Node.js", "MongoDB", "Stripe", "Redis"],
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/username/project",
+    "category": "Web Application",
+    "featured": true,
+    "visible": false
+  },
+  {
+    "title": "Task Management App",
+    "description": "Real-time collaborative task management system with drag-and-drop interface, team collaboration features, and progress tracking.",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+    "technologies": ["React", "Firebase", "Material-UI", "WebSocket"],
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/username/project",
+    "category": "Web Application",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "title": "Mobile Fitness Tracker",
+    "description": "Cross-platform mobile app for tracking workouts, nutrition, and health metrics with AI-powered recommendations.",
+    "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80",
+    "technologies": ["React Native", "Node.js", "PostgreSQL", "TensorFlow"],
+    "liveUrl": "https://example.com",
+    "category": "Mobile App",
+    "featured": true,
+    "visible": false
+  },
+  {
+    "title": "Analytics Dashboard",
+    "description": "Real-time analytics dashboard with customizable widgets, data visualization, and automated reporting capabilities.",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    "technologies": ["Vue.js", "D3.js", "Express", "MongoDB"],
+    "liveUrl": "https://example.com",
+    "githubUrl": "https://github.com/username/project",
+    "category": "Dashboard",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "title": "AI Chatbot Platform",
+    "description": "Intelligent chatbot platform with natural language processing, sentiment analysis, and multi-channel support.",
+    "image": "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80",
+    "technologies": ["Python", "TensorFlow", "FastAPI", "Docker"],
+    "githubUrl": "https://github.com/username/project",
+    "category": "AI/ML",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "title": "Social Media Scheduler",
+    "description": "Automated social media scheduling tool with content calendar, analytics, and multi-platform posting capabilities.",
+    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
+    "technologies": ["Next.js", "Prisma", "PostgreSQL", "Redis"],
+    "liveUrl": "https://example.com",
+    "category": "Web Application",
+    "featured": false,
+    "visible": false
+  },
+  {
+    "title": "Basic Calculator App",
+    "description": "A simple calculator application that performs basic arithmetic operations such as addition, subtraction, multiplication, and division. Built with a user-friendly interface for ease of use.",
+    "image": "https://images.unsplash.com/photo-1648201637025-1c77b9be3013?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=3540",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "liveUrl": "https://calculate-math.vercel.app",
+    "category": "Web Application",
+    "featured": false,
+    "visible": true
+  }
+]
