@@ -1,0 +1,24 @@
+<div class="landing-container">
+  <div class="content-wrapper">
+    <div class="header">
+      <h1 class="name">Subramanian</h1>
+      <p class="role">{{githubBio()}}</p>
+      <p class="professional-info">Based in Chennai, India</p>
+      <p class="tagline">Transforming Ideas into Digital Reality</p>
+    </div>
+    
+    <div class="stats-container">
+      @for (stat of statistics; track stat.label) {
+        <div class="stat-item">
+          <span class="material-icons-round stat-icon">{{stat.icon}}</span>
+          <div class="stat-content">
+            <div class="stat-number">{{stat.number}}</div>
+            <div class="stat-label">{{stat.label}}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
