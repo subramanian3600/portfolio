@@ -47,7 +47,7 @@
         "liveUrl": "https://calculate-math.vercel.app",
         "category": "Web Application",
         "featured": false,
-        "visible": true,
+        "visible": false,
         "type": "personal"
     },
     {
