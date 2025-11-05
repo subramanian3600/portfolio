@@ -10,6 +10,7 @@ import { ItSkills } from './it-skills/it-skills';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
 import { EducationComponent } from './education/education.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ConnectComponent } from './connect/connect.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProjectsComponent } from './projects/projects.component';
     ItSkills,
     WorkExperienceComponent,
     EducationComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ConnectComponent
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

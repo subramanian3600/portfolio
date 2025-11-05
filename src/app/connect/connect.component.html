@@ -1,0 +1,99 @@
+<section class="connect-section">
+  <div class="connect-container">
+    <div class="section-header">
+      <span class="icon-badge">
+        <span class="material-icons-round">connect_without_contact</span>
+      </span>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-subtitle">Feel free to reach out for collaborations, opportunities, or just a friendly chat!</p>
+    </div>
+
+    <div class="connect-content">
+      <!-- Contact Info Cards -->
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="card-icon">
+            <span class="material-icons-round">email</span>
+          </div>
+          <h3 class="card-title">Email</h3>
+          <p class="card-value">{{ contactInfo.email }}</p>
+          <button class="copy-btn" (click)="copyEmail()">
+            <span class="material-icons-round">content_copy</span>
+            Copy Email
+          </button>
+        </div>
+
+        @if (contactInfo.phone) {
+          <div class="contact-card">
+            <div class="card-icon">
+              <span class="material-icons-round">phone</span>
+            </div>
+            <h3 class="card-title">Phone</h3>
+            <p class="card-value">{{ contactInfo.phone }}</p>
+            <a [href]="'tel:' + contactInfo.phone" class="contact-link">
+              <span class="material-icons-round">call</span>
+              Call Me
+            </a>
+          </div>
+        }
+
+        <div class="contact-card">
+          <div class="card-icon">
+            <span class="material-icons-round">location_on</span>
+          </div>
+          <h3 class="card-title">Location</h3>
+          <p class="card-value">{{ contactInfo.location }}</p>
+          <div class="location-info">
+            <span class="material-icons-round">public</span>
+            Available Worldwide
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-section">
+        <h3 class="social-title">Find me on social media</h3>
+        <div class="social-grid">
+          @for (social of visibleSocialLinks; track social.name) {
+            <div class="social-card" (click)="openLink(social.url)">
+              <div class="social-icon" [style.background]="social.color">
+                <i [class]="social.icon"></i>
+              </div>
+              <div class="social-info">
+                <h4 class="social-name">{{ social.name }}</h4>
+                @if (social.username) {
+                  <p class="social-username">{{ social.username }}</p>
+                }
+              </div>
+              <span class="material-icons-round arrow-icon">arrow_forward</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="cta-section">
+        <div class="cta-content">
+          <span class="material-icons-round cta-icon">handshake</span>
+          <h3 class="cta-title">Ready to work together?</h3>
+          <p class="cta-text">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+          <div class="cta-buttons">
+            <a [href]="'mailto:' + contactInfo.email" class="cta-btn primary">
+              <span class="material-icons-round">send</span>
+              Send a Message
+            </a>
+            <a href="assets/cv.pdf" download="Subramanian_CV.pdf" class="cta-btn secondary">
+              <span class="material-icons-round">download</span>
+              Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p class="footer-text">© 2025 Subramanian. Built with <span class="heart">❤️</span> using Angular</p>
+    </div>
+  </div>
+</section>
